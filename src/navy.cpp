@@ -17,13 +17,15 @@ Navy& Navy::operator= (const Navy& rhs) {
     return *this;
 }
 
+
+// Print function
 void Navy::display () {
     std::cout << 
-            "Navy element has the following: \n" <<
-            "\tName: " << this->name << "\n" <<
-            "\tSquad: " << this->squad << "\n" <<
-            "\tAge: " << this->age << "\n" <<
-            "\tWeapon: " << this->weapon << "\n";
+        "Navy element has the following: \n" <<
+        "\tName: " << this->name << "\n" <<
+        "\tSquad: " << this->squad << "\n" <<
+        "\tAge: " << this->age << "\n" <<
+        "\tWeapon: " << this->weapon << "\n";
 }
 
 /*

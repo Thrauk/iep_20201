@@ -15,6 +15,7 @@ Soldier& Soldier::operator= (const Soldier& rhs) {
     return *this;
 }
 
+// Print function
 void Soldier::display () {
     std::cout << 
             "Soldier element has the following: \n" <<

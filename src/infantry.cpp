@@ -5,25 +5,34 @@
 
 // Assigment operator without the use of parent
 Infantry& Infantry::operator= (const Infantry& rhs) {
-        if(&rhs != this) {
-            this->name = rhs.name;
-            this->age = rhs.age;
-            this->squad = rhs.squad;
-            this->weapon = rhs.weapon;
-        }
-        else {
-            std::cout << "Self assigment!\n";
-        }
-		return *this;
+    if(&rhs != this) {
+        this->name = rhs.name;
+        this->age = rhs.age;
+        this->squad = rhs.squad;
+        this->weapon = rhs.weapon;
+    }
+    // and if we do the assigment like this instead
+    /*
+    if(&rhs != this) {
+        this->weapon = rhs.weapon;
+    }
+    the parent assigment operator won't be called. Only the weapon field will be
+    copied.
+    */
+    else {
+        std::cout << "Self assigment!\n";
+    }
+    return *this;
 }
 
+// Print function
 void Infantry::display () {
     std::cout << 
-            "Infantry element has the following: \n" <<
-            "\tName: " << this->name << "\n" <<
-            "\tSquad: " << this->squad << "\n" <<
-            "\tAge: " << this->age << "\n" <<
-            "\tWeapon: " << this->weapon << "\n";
+        "Infantry element has the following: \n" <<
+        "\tName: " << this->name << "\n" <<
+        "\tSquad: " << this->squad << "\n" <<
+        "\tAge: " << this->age << "\n" <<
+        "\tWeapon: " << this->weapon << "\n";
 }
 
 /*
