@@ -1,5 +1,7 @@
 #include<stdlib.h>
 #include<iostream>
+#include "objective.hpp"
+#include<memory>
 
 #ifndef SOLDIER_H
 #define SOLDIER_H
@@ -9,6 +11,7 @@ class Soldier {
         std::string name;
         std::string squad;
         int age;
+        std::shared_ptr<Objective> objectivePtr;
         
         Soldier(std::string name, std::string squad, int age) : 
             name(name), squad(squad), age(age) {}

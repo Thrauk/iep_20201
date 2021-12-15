@@ -1,5 +1,6 @@
 # CMake version
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.1)
+
 
 # Project name
 project(myproject)
@@ -18,14 +19,21 @@ else()
     endif()    
 endif()    
 
+
+
 # Define the executable
 add_executable(${PROJECT_NAME}
                inc/soldier.hpp
                inc/infantry.hpp
-               inc/navy.hpp  
+               inc/navy.hpp
+               inc/objective.hpp
+               inc/team_leader.hpp
                src/main.cpp
                src/soldier.cpp
                src/infantry.cpp
                src/navy.cpp
                )
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(myproject PRIVATE Threads::Threads)
