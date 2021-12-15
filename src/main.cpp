@@ -29,6 +29,9 @@ int main() {
 
     std::unique_ptr<Soldier> soldierLeader (new Soldier("Jon Smith","Demon Dogs", 18));
 
+    // Cant do this because it is unique
+    //std::unique_ptr<Soldier> soldierLeader2 = soldierLeader;
+
     // prints reference to the newly created Soldier object
     std::cout << soldierLeader.get() << std::endl;
 
